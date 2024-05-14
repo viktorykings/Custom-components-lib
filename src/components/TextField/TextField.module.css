@@ -1,0 +1,130 @@
+@import url(../../style.css);
+
+* {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+input,
+input:active {
+  outline: none;
+  transition: all ease 0.3s;
+}
+input {
+  border-radius: 4px;
+  padding: 16.5px 14px;
+  background-color: inherit;
+}
+.textField {
+  margin: 8px;
+  display: flex;
+  position: relative;
+}
+.outlined {
+  border: 1px solid hsla(var(--border-default));
+  background-color: var(--white);
+}
+.filled {
+  border: none;
+  border-bottom: 1px solid var(--border-bottom);
+  background-color: var(--gray-filled);
+  border-radius: 4px 4px 0 0;
+  padding: 25px 12px 8px;
+}
+.standart {
+  border: none;
+  border-bottom: 1px solid var(--border-bottom);
+  background-color: transparent;
+  border-radius: 4px 4px 0 0;
+  padding: 25px 12px 8px;
+}
+input:not(:placeholder-shown) ~ .label {
+  top: -10px;
+  left: 5px;
+  padding: 5px;
+  height: 11px;
+  font-size: 0.75em;
+  cursor: text;
+  transition-property: all;
+  transition-duration: 300ms;
+  color: hsla(var(--gray-text));
+  background-color: var(--white);
+  max-width: 100%;
+}
+input:not(:placeholder-shown).filled ~ .label,
+input:not(:placeholder-shown).standart ~ .label {
+  top: 5px;
+  background-color: inherit;
+}
+input:hover:enabled:not(:focus) {
+  border-color: black;
+}
+input:hover:enabled:not(:focus).filled {
+  border-color: black;
+  filter: brightness(93%);
+}
+input:focus.outlined {
+  border: 2px solid var(--blue);
+}
+input:focus.filled,
+input:focus.standart {
+  border-bottom: 2px solid var(--blue);
+}
+.label {
+  position: absolute;
+  top: 30%;
+  left: 20px;
+  color: hsla(var(--gray-text));
+  width: auto;
+  max-width: 50%;
+  transition-property: all;
+  transition-duration: 300ms;
+}
+.label-focused {
+  position: absolute;
+  background-color: inherit;
+  left: 5px;
+  top: -10px;
+  padding: 5px;
+  height: 11px;
+  font-size: 0.75em;
+  cursor: text;
+  transition-property: all;
+  transition-duration: 300ms;
+  color: var(--blue);
+  max-width: 100%;
+}
+
+.outlined ~ .label-focused {
+  background-color: var(--white);
+}
+
+.standart ~ .label,
+.filled ~ .label {
+  top: 40%;
+  left: 5px;
+}
+.standart ~ .label-focused,
+.filled ~ .label-focused {
+  top: 5px;
+}
+
+.error,
+input:focus.error {
+  border-color: var(--error);
+}
+input:hover:enabled:not(:focus).error{
+  border-color: var(--error);
+}
+.error ~ .label,
+.error ~ .label-focused {
+  color: var(--error);
+  left: 5px;
+  top: 5px;
+  padding: 2px;
+  height: 11px;
+  font-size: 0.75em;
+}
+.outlined.error ~ .label,
+.outlined.error ~ .label-focused {
+  top: -10px;
+  background: var(--white);
+}
