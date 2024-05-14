@@ -1,0 +1,130 @@
+@import url(../../style.css);
+.checkBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  border-radius: 0;
+  padding: 9px;
+  border-radius: 50%;
+  color: var(--black-60);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  text-decoration: none;
+  color: inherit;
+}
+
+.checkBox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmarkContainer {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 42px;
+  width: 42px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+.checkmark {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  height: 24px;
+  width: 24px;
+  background-color: inherit;
+  border: 1px solid var(--black-60);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.checkmarkContainer::after {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%) scale(0);
+  height: 1px;
+  width: 1px;
+  top: 21px;
+  left: 21px;
+}
+
+input:focus:not(:checked)  + .checkmarkContainer::after{
+  background-color: var(--black-30);
+  animation: ripple 0.5s ease-out;
+}
+
+input:focus:checked + .checkmarkContainer::after {
+  background-color: var(--checkbox-checked);
+  animation: ripple 0.5s ease-out;
+}
+label:focus{
+    animation: none;
+}
+input:not(:disabled) ~ .checkmarkContainer:hover {
+    background-color: var(--checkbox-hover);
+    animation: none;
+}
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(50, 50);
+  }
+}
+
+input:checked ~ .checkmarkContainer > .checkmark {
+  background-color: var(--checkbox-checked);
+  border-color: var(--checkbox-checked);
+}
+
+.checkmarkContainer > .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+input:checked ~ .checkmarkContainer > .checkmark:after {
+  display: block;
+}
+
+.checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+input:disabled ~ .checkmarkContainer > .checkmark{
+    border-color: var(--disabled-border);
+    color: var(--disabled-border);
+}
+input:checked:disabled ~ .checkmarkContainer > .checkmark{
+    background-color: var(--disabled-border);
+}
