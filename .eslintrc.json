@@ -10,22 +10,17 @@
     "plugin:react/jsx-runtime",
     "plugin:storybook/recommended"
   ],
+  
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
+    "sourceType": "module"
+},
   "plugins": [
     "react",
     "prettier"
   ],
   "rules": {},
   "settings": {
-    "import/resolver": {
-      "typescript": {}
-    },
     "react": {
       "version": "detect"
     }
