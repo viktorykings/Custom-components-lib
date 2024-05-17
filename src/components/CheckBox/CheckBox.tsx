@@ -7,7 +7,7 @@ export interface CheckBoxProps {
     disabled?: boolean;
     onChange? : ()=> void
 }
-const CheckBox: FC<CheckBoxProps> = (props) => {
+const CheckBox = (props: CheckBoxProps) => {
     const { label, checked, disabled, onChange } = props;
     return (
         <label className={styles.checkBox}>

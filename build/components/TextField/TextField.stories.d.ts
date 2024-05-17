@@ -1,7 +1,6 @@
-import React from 'react';
 import type { StoryObj } from '@storybook/react';
 declare const meta: {
-    component: React.FC<import("./TextField").TextFieldProps>;
+    component: (props: import("./TextField").TextFieldProps) => import("react/jsx-runtime").JSX.Element;
     title: string;
     parameters: {
         layout: string;
