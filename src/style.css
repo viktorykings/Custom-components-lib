@@ -1,21 +1,23 @@
 :root {
-    --blue: #5468ff;
-    --white: #ffffff;
-    --disabled-bg: #ebedf0;
-    --disabled-border: #969faf;
-    --error: red;
-    --gray-filled: #e8ebf0;
-    --gray-text: 213, 15%, 47%;
-    --border-bottom: rgba(0,0,0,0.42);
-    --border-default: 213, 18%, 81%;
-    --black-60: rgba(0, 0, 0, 0.6);
-    --black-30: rgba(0, 0, 0, 0.3);
-    --black-10: rgba(0, 0, 0, 0.1);
-    --checkbox-checked: #1976d2;
-    --checkbox-hover: rgba(25, 118, 210, 0.04);
-    --switch-checked: rgb(25, 118, 210);
-    --switch-checked-slider: rgba(25, 118, 210, 0.1)
-  }
+  --blue: #5468ff;
+  --white: #ffffff;
+  --black: black;
+  --disabled-bg: #ebedf0;
+  --disabled-border: #969faf;
+  --error: red;
+  --gray-filled: #e8ebf0;
+  --gray-text: 213, 15%, 47%;
+  --border-bottom: rgba(0, 0, 0, 0.42);
+  --border-default: 213, 18%, 81%;
+  --black-60: rgba(0, 0, 0, 0.6);
+  --black-30: rgba(0, 0, 0, 0.3);
+  --black-10: rgba(0, 0, 0, 0.1);
+  --checkbox-checked: #1976d2;
+  --checkbox-hover: rgba(25, 118, 210, 0.04);
+  --switch-checked: rgb(25, 118, 210);
+  --switch-checked-slider: rgba(25, 118, 210, 0.1);
+  --back-drop: rgba(0, 0, 0, 0.5);
+}
 * {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
