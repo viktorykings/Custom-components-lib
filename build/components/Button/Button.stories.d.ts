@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react';
 declare const meta: {
-    component: ({ children, variant, size, ...props }: Partial<import("./Button").ButtonProps>) => import("react/jsx-runtime").JSX.Element;
+    component: (props: import("./Button").ButtonProps) => import("react/jsx-runtime").JSX.Element;
     title: string;
     parameters: {
         layout: string;

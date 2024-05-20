@@ -11,7 +11,8 @@
     border: none;
     background-color: transparent;
     color: var(--blue);
-
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .contained{
@@ -39,4 +40,12 @@
 }
 .outlined:disabled{
     border-color: var(--disabled-border);
+}
+
+.outlined:hover,
+.text:hover{
+    background-color: var(--checkbox-hover);
+}
+.contained:hover{
+    background-color: var(--button-hover);
 }

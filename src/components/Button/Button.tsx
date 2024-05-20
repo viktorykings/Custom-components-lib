@@ -1,6 +1,5 @@
 import React from 'react';
-import styles from './Button.module.css' 
-import cn from 'classnames'
+import styles from './Button.module.css'
 
 export interface ButtonProps {
     variant: 'text' | 'contained' | 'outlined';
@@ -10,17 +9,10 @@ export interface ButtonProps {
     children: React.ReactNode;
 }
 
-const Button = ({
-    children, variant='contained', size='medium', ...props
-}:Partial<ButtonProps>) => {
-    
-    const classNames = cn(
-        styles.button,
-        styles[variant],
-        styles[size],
-    );
+const Button = (props: ButtonProps) => {
+    const { children, variant = 'contained', size = 'medium' } = props;
     return (
-        <button {...props} className={classNames}>
+        <button {...props} className={[styles.button, styles[variant], styles[size]].join(' ')}>
             {children}
         </button>
     );

@@ -6,5 +6,5 @@ export interface ButtonProps {
     size: 'small' | 'medium' | 'large';
     children: React.ReactNode;
 }
-declare const Button: ({ children, variant, size, ...props }: Partial<ButtonProps>) => import("react/jsx-runtime").JSX.Element;
+declare const Button: (props: ButtonProps) => import("react/jsx-runtime").JSX.Element;
 export default Button;
