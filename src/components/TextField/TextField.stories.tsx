@@ -37,7 +37,7 @@ export const Standart: Story = {
         variant: 'standart',
         label: 'standart',
         disabled: false,
-        error: false
+        error: false,
     },
 };
 export const Error: Story = {

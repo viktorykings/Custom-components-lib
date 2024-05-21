@@ -17,6 +17,8 @@ input {
   margin: 8px;
   display: flex;
   position: relative;
+  box-sizing: border-box;
+
 }
 .outlined {
   border: 1px solid hsla(var(--border-default));
@@ -62,12 +64,14 @@ input:hover:enabled:not(:focus).filled {
   filter: brightness(93%);
 }
 input:focus.outlined {
-  border: 2px solid var(--blue);
+  border: 1px solid var(--blue);
+  outline: 1px solid var(--blue);
 }
 input:focus.filled,
 input:focus.standart {
   border-bottom: 2px solid var(--blue);
 }
+
 .label {
   position: absolute;
   top: 30%;
@@ -77,24 +81,15 @@ input:focus.standart {
   max-width: 50%;
   transition-property: all;
   transition-duration: 300ms;
-}
-.label-focused {
-  position: absolute;
-  background-color: inherit;
-  left: 5px;
-  top: -10px;
-  padding: 5px;
-  height: 11px;
-  font-size: 0.75em;
   cursor: text;
-  transition-property: all;
-  transition-duration: 300ms;
-  color: var(--blue);
-  max-width: 100%;
 }
 
-.outlined ~ .label-focused {
+input:focus.outlined ~ .label {
   background-color: var(--white);
+  top: -8px;
+  font-size: 0.75em;
+  color: var(--blue);
+  padding: 1px 2px;
 }
 
 .standart ~ .label,
@@ -102,20 +97,24 @@ input:focus.standart {
   top: 40%;
   left: 5px;
 }
-.standart ~ .label-focused,
-.filled ~ .label-focused {
+input:focus.standart ~ .label,
+input:focus.filled ~ .label {
   top: 5px;
+  font-size: 0.75em;
+  color: var(--blue);
 }
 
 .error,
 input:focus.error {
   border-color: var(--error);
+  outline-color: var(--error);
 }
 input:hover:enabled:not(:focus).error{
   border-color: var(--error);
 }
 .error ~ .label,
-.error ~ .label-focused {
+input:focus.filled.error ~label,
+input:focus.standart.error ~label{
   color: var(--error);
   left: 5px;
   top: 5px;
@@ -123,8 +122,11 @@ input:hover:enabled:not(:focus).error{
   height: 11px;
   font-size: 0.75em;
 }
-.outlined.error ~ .label,
-.outlined.error ~ .label-focused {
+input:focus.outlined.error ~label{
+  color: var(--error);
+  top: -9px;
+}
+.outlined.error ~ .label {
   top: -10px;
   background: var(--white);
 }

@@ -17,12 +17,15 @@ const TextField  = (props: TextFieldProps) => {
     return (
         <div className={[styles.textField].join(' ')}>
             <input
+                id="input"
                 className={[styles[variant], disabled && styles.disabled, error && styles.error ].join(' ')}
                 type="text"
                 placeholder={placeholder ?? ' '}
                 {...props}
             />
-            <label htmlFor="" className={focused ? styles['label-focused'] : styles['label']}>{label}</label>
+            {/* <label htmlFor="" className={focused ? styles['label-focused'] : styles['label']}>{label}</label> */}
+            {/* foc */}
+            <label htmlFor="input" className={styles['label']}>{label}</label>
         </div>
 
     )
