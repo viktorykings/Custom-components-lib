@@ -8,7 +8,7 @@
     "lint": "node node_modules/eslint/bin/eslint.js ./src/* --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",

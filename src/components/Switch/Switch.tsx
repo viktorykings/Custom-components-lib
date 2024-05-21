@@ -5,18 +5,19 @@ export interface SwitchProps {
     checked?: boolean;
     disabled?: boolean;
     onChange?: () => void
+    label?: string
 }
 const Switch = (props: SwitchProps) => {
-    const { checked, disabled, onChange } = props;
+    const { checked, disabled, onChange, label } = props;
     return (
         <label className={styles.switch}>
-            <input type="checkbox" checked={checked} disabled={disabled} onChange={onChange} />
+            <input type="checkbox" {...props} disabled={disabled} onChange={onChange} role='switch' />
             <div className={styles.slider}>
                 <div className={styles.circleContainer}>
                     <div className={styles.circle}></div>
                 </div>
             </div>
-
+        {label}
         </label>
     )
 }

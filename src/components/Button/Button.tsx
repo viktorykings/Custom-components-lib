@@ -10,7 +10,7 @@ export interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-    const { children, variant = 'contained', size = 'medium' } = props;
+    const { children, variant, size} = props;
     return (
         <button {...props} className={[styles.button, styles[variant], styles[size]].join(' ')}>
             {children}
