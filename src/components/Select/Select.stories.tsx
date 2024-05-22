@@ -21,9 +21,52 @@ export const Outlined: Story = {
         variant: 'outlined',
         disabled: false,
         error: false,
-        open: true,
         label:'label',
-        // options:[{value:'1', children: 'one'}, {value:'2', children: 'two'}, {value:'3', children: 'three'}]
+        options:[{
+            value: 'one',
+        }, {
+            value: 'two',
+        }, {
+            value: 'three',
+        }],
+    },
+};
+export const Filled: Story = {
+    args: {
+        variant: 'filled',
+        disabled: false,
+        error: false,
+        label:'label',
+        options:[{
+            value: 'one',
+        }, {
+            value: 'two',
+        }, {
+            value: 'three',
+        }],
+    },
+};
+export const Standart: Story = {
+    args: {
+        variant: 'standart',
+        disabled: false,
+        error: false,
+        label:'label',
+        options:[{
+            value: 'one',
+        }, {
+            value: 'two',
+        }, {
+            value: 'three',
+        }],
+    },
+};
+export const Error: Story = {
+    args: {
+        variant: 'outlined',
+        disabled: false,
+        error: true,
+        label:'label',
         options:[{
             value: 'one',
         }, {

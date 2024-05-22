@@ -1,5 +1,6 @@
 .dropdown-container{
-    width: 200px;
+    width: 225px;
+    box-sizing: border-box;
     min-width: fit-content;
     margin: 0 auto;
     position: relative;
@@ -14,7 +15,7 @@
 }
 .dropdown-opotions-container{
     width: inherit;
-
+    min-width: inherit;
     position: absolute;
     top: 50px;
     margin: 0 8px;
@@ -45,6 +46,10 @@
 }
 .option:hover{
     background-color: var(--select-hover);
+}
+
+.option-focused{
+    background-color: var(--switch-cheked);
 }
 
 .arrow{

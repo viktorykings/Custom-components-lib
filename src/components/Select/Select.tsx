@@ -1,9 +1,9 @@
 import React, { forwardRef, useRef, useState, MouseEvent } from 'react';
 import styles from './Select.module.css'
 import TextField from '../TextField/TextField';
+import { error } from 'console';
 
 export interface SelectProps {
-    open?: boolean;
     disabled?: boolean;
     error?: boolean;
     variant: 'outlined' | 'filled' | 'standart';
@@ -15,10 +15,11 @@ export interface SelectProps {
 interface OptionProps {
     value: string;
     onClick?: (e:  MouseEvent<HTMLLIElement, globalThis.MouseEvent>) => void,
+    cl?: string
 }
 
 const Option = forwardRef<HTMLLIElement, OptionProps>(function Option(props, ref) {
-    const { value, onClick } = props
+    const { value, onClick, cl } = props
     return <li className={styles['option']} ref={ref} onClick={onClick} >{value}</li>
 })
 
@@ -30,7 +31,7 @@ const Icon = ({ cl }: { cl: string }) => {
 }
 
 const Select = (props: SelectProps) => {
-    const { options, variant, open, label, selected } = props;
+    const { options, variant, label, selected, error } = props;
     const ref = useRef<HTMLLIElement>(null)
 
     const [isOpenSelect, setIsOpenSelect] = useState(false);
@@ -43,22 +44,19 @@ const Select = (props: SelectProps) => {
         option: string,
         e: MouseEvent<HTMLLIElement, globalThis.MouseEvent>
     ) => {
-        console.log('click on ontion', option)
         e.stopPropagation();
         onChangeSelected(option);
         setIsOpenSelect(false);
     };
     const handleShowOptions = () => {
-        console.log('click on select')
         setIsOpenSelect((isOpen) => !isOpen);
     }
     
     return (
-        <div className={styles['dropdown-container']}>
-            <div className={styles['dropdown-header']} onClick={handleShowOptions}>
-                <TextField variant={variant} label={label}  />
-                {selectedOption}
-                <Icon cl={open ? styles['rotated-arrow'] : ''} />
+        <div className={styles['dropdown-container']} tabIndex={-1}  onBlur={e => e.relatedTarget === null && setIsOpenSelect(false)}   onClick={handleShowOptions}>
+            <div className={styles['dropdown-header']} >
+                <TextField variant={variant} label={label} readonly value={selectedOption} error={error} />
+                <Icon cl={isOpenSelect ? styles['rotated-arrow'] : ''} />
             </div>
             {isOpenSelect &&
                 <div className={styles['dropdown-opotions-container']}>
