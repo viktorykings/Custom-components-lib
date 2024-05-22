@@ -18,6 +18,7 @@
   --switch-checked: rgb(25, 118, 210);
   --switch-checked-slider: rgba(25, 118, 210, 0.1);
   --back-drop: rgba(0, 0, 0, 0.5);
+  --select-hover:  rgba(25, 118, 210, 0.08);
 }
 * {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;

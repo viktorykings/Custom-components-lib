@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React from 'react';
 import styles from './TextField.module.css'
 
 export interface TextFieldProps {
@@ -8,6 +8,7 @@ export interface TextFieldProps {
     label?: string | number;
     placeholder?: string | undefined;
     focused? : boolean
+    onClick? : () => void
 }
 
 
