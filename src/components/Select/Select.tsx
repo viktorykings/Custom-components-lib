@@ -1,7 +1,6 @@
 import React, { forwardRef, useRef, useState, MouseEvent } from 'react';
 import styles from './Select.module.css'
 import TextField from '../TextField/TextField';
-import { error } from 'console';
 
 export interface SelectProps {
     disabled?: boolean;
