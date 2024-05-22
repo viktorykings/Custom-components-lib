@@ -2,11 +2,14 @@
 
 * {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  color: hsla(var(--gray-text));
 }
 input,
 input:active {
   outline: none;
   transition: all ease 0.3s;
+  font-family: inherit;
+  font-size: 1em;
 }
 input {
   border-radius: 4px;
@@ -87,6 +90,8 @@ input:focus.standart {
 input:focus.outlined ~ .label {
   background-color: var(--white);
   top: -8px;
+  left: 5px;
+
   font-size: 0.75em;
   color: var(--blue);
   padding: 1px 2px;

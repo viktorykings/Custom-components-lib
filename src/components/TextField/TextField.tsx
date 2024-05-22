@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './TextField.module.css'
 
 export interface TextFieldProps {
@@ -7,25 +7,33 @@ export interface TextFieldProps {
     variant: 'outlined' | 'filled' | 'standart';
     label?: string | number;
     placeholder?: string | undefined;
-    focused? : boolean
-    onClick? : () => void
+    focused?: boolean
+    onChange?: () => void
+    value?: string
+    readonly?: boolean
 }
 
 
-const TextField  = (props: TextFieldProps) => {
-    const { disabled, error, variant, label, placeholder, focused } = props;
+const TextField = (props: TextFieldProps) => {
+    const { disabled, error, variant, label, placeholder, focused, value } = props;
+
+    const [inputValue, setInputValue] = useState(value ?? '')
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setInputValue(e.target.value)
+    }
 
     return (
         <div className={[styles.textField].join(' ')}>
             <input
                 id="input"
-                className={[styles[variant], disabled && styles.disabled, error && styles.error ].join(' ')}
+                className={[styles[variant], disabled && styles.disabled, error && styles.error].join(' ')}
                 type="text"
                 placeholder={placeholder ?? ' '}
+                value={inputValue}
+                onChange={handleChange}
                 {...props}
             />
-            {/* <label htmlFor="" className={focused ? styles['label-focused'] : styles['label']}>{label}</label> */}
-            {/* foc */}
             <label htmlFor="input" className={styles['label']}>{label}</label>
         </div>
 

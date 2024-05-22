@@ -5,7 +5,9 @@ export interface TextFieldProps {
     label?: string | number;
     placeholder?: string | undefined;
     focused?: boolean;
-    onClick?: () => void;
+    onChange?: () => void;
+    value?: string;
+    readonly?: boolean;
 }
 declare const TextField: (props: TextFieldProps) => import("react/jsx-runtime").JSX.Element;
 export default TextField;
