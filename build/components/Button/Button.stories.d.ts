@@ -1,4 +1,4 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from "@storybook/react";
 declare const meta: {
     component: (props: import("./Button").ButtonProps) => import("react/jsx-runtime").JSX.Element;
     title: string;

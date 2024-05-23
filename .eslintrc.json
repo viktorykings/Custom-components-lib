@@ -4,6 +4,8 @@
     "es2021": true
   },
   "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
     "prettier",
@@ -12,15 +14,23 @@
   ],
   
   "parserOptions": {
+    "parser": "@typescript-eslint/parser",
     "ecmaVersion": "latest",
     "sourceType": "module"
 },
   "plugins": [
     "react",
-    "prettier"
+    "prettier",
+    "@typescript-eslint"
   ],
-  "rules": {},
+  "rules": {
+    // "react/jsx-uses-react": "on",
+    // "react/react-in-jsx-scope": "on"
+  },
   "settings": {
+    "import/resolver": {
+      "typescript": {}
+    },
     "react": {
       "version": "detect"
     }
